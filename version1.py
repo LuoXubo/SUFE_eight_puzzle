@@ -39,12 +39,12 @@ def eight_puzzle_step(input_):
     ClosedArray = []
     flag = False # flag=True: 返回解;  flag=False:  返回-1
     while len(OpenArray):
-        print(step)
+        # print(step)
         # 找到Open中f值最低的结点
         cmp = operator.attrgetter('f','h')
         Open.sort(key=cmp)
         now = Open[0]
-        print(now.array(), now.f)
+        # print(now.array(), now.f)
         Open.remove(now)
         OpenArray.remove(now.array())
         Closed.append(now)
@@ -105,30 +105,3 @@ if __name__ == '__main__':
     input_ = load_input()
     print(eight_puzzle_step(input_))
 
-
-'''
-step #1
-283
-164
-705
-step #2
-283
-104
-765
-step #3
-203
-184
-765
-step #4
-023
-184
-765
-step #5
-123
-084
-765
-step #6
-123
-804
-765
-'''
